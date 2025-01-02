@@ -21,44 +21,37 @@ int main()
 
 	do
 	{
-		try
-		{
-			cin >> choise;
+		cin >> choise;
 
-			switch (choise)
-			{
-			case ADD:
-				cout << "Введите то что хотите добавить: ";
-				cin >> value;
-				queue.Add(value);
-				break;
-			case DEL_LAST:
-				queue.Extract();
-				break;
-			case PRINT:
-				queue.print();
-				break;
-			case CLEAR:
-				queue.Clear();
-				break;
-			case KOL_VO:
-				cout << "В списке " << queue.GetCount() << " элементов" << "\n";
-				break;
-			case IS_EMPTY:
-				if (queue.IsEmpty() == true)
-				{
-					cout << "Список пуст\n";
-				}
-				else
-				{
-					cout << "Список не пуст\n";
-				}
-				break;
-			}
-		}
-		catch (const out_of_range& range_e)
+		switch (choise)
 		{
-			cout << range_e.what();
+		case ADD:
+			cout << "Введите то что хотите добавить: ";
+			cin >> value;
+			queue.Add(value);
+			break;
+		case DEL_LAST:
+			queue.Extract();
+			break;
+		case PRINT:
+			queue.print();
+			break;
+		case CLEAR:
+			queue.Clear();
+			break;
+		case KOL_VO:
+			cout << "В списке " << queue.GetCount() << " элементов" << "\n";
+			break;
+		case IS_EMPTY:
+			if (queue.IsEmpty() == true)
+			{
+				cout << "Список пуст\n";
+			}
+			else
+			{
+				cout << "Список не пуст\n";
+			}
+			break;
 		}
 	} while (choise != 0);
 
